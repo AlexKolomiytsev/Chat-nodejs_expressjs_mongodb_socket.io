@@ -1,0 +1,22 @@
+//Created by sanya on 17.02.2016.
+extends layout
+
+block content
+    h1 Registration and sign in
+    p Enter your user name and password. If no such user - it will be created.
+
+    form.form-horizontal.login-form(name="login-form")
+        div.form-group
+            label.col-lg-1.control-label(for="input-username") Name
+            div.col-lg-11
+                input.form-control#input-username(name="username", value="name", type="text", placeholder="Name")
+        div.form-group
+            label.col-lg-1.control-label(for="input-password") Password
+            div.col-lg-11
+                input.form-control#input-password(name="password", value="pass", type="password", placeholder="Password")
+        div.form-group
+            div.col-lg-offset-1.col-lg-10
+                button.btn.btn-primary(type="submit", data-loading-text="Sending...") Enter
+                span.help-block.error
+    script(src="/javascripts/formLogin.js")
+

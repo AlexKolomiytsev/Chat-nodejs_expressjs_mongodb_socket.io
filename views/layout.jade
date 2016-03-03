@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/external/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    script(src='/external/bower_components/jquery/dist/jquery.js')
+    script(src='/external/bower_components/bootstrap/dist/js/bootstrap.js')
+  body
+    section.container
+      header
+        nav.navbar.navbar-default(role="navigation")
+          ul.nav.navbar-nav
+            li
+              a(href="/") Main
+            if user
+              li
+                a(href='/chat') Chat
+          ul.nav.navbar-nav.navbar-right
+            if user
+              li
+                a#logout(href="") Logout
+            else
+              li
+                a(href="/login") Sign in
+      block content
+      script(src="/javascripts/logoutUser.js")
+

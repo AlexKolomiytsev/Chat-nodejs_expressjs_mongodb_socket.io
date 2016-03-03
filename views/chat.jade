@@ -1,0 +1,15 @@
+//Created by sanya on 21.02.2016.
+extends layout
+
+block content
+    h1= title
+    p.lead Chat is here
+    span.glyphicon.glyphicon-user
+    span.alert-info= ' You logged as ' + user.username
+    div#room
+        ul.list-group
+        form
+            input.form-control(autocomplete="off", placeholder="Message...", autofocus, disabled)
+    script(src="/external/bower_components/socket.io-client/socket.io.js")
+    script(src="/javascripts/chatSockets.js")
+
